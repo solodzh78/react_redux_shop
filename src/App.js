@@ -1,4 +1,8 @@
-function App() {
+import { connect } from 'react-redux';
+import './store'
+
+function App(props) {
+  console.log(props);
   return (
     <div className="App">
       App
@@ -6,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);

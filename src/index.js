@@ -1,11 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
 import './index.css';
 import App from './App';
 
-ReactDOM.render(
+import newStore from './store';
+const store = newStore();
+
+setTimeout(() => {
+  store.dispatch({
+    type: 'SET_BOOKS',
+    payload: {
+      books: [
+        {
+          id: 0,
+          title: 'Hello world'
+        }
+      ]
+    }
+  })
+}, 1000);
+
+setTimeout(() => {
+  store.dispatch({
+    type: 'SET_BOOKS',
+    payload: {
+      books: [
+        {
+          id: 0,
+          title: 'Hello world'
+        }
+      ]
+    }
+  })
+}, 2000);
+
+ReactDOM.render(  
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
