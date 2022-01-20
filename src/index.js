@@ -8,33 +8,33 @@ import App from './App';
 import newStore from './store';
 const store = newStore();
 
-setTimeout(() => {
-  store.dispatch({
-    type: 'SET_BOOKS',
-    payload: {
-      books: [
-        {
-          id: 0,
-          title: 'Hello world'
-        }
-      ]
-    }
-  })
-}, 1000);
+// setTimeout(() => {
+//   store.dispatch({
+//     type: 'SET_BOOKS',
+//     payload: {
+//       books: [
+//         {
+//           id: 0,
+//           title: 'Hello world'
+//         }
+//       ]
+//     }
+//   })
+// }, 1000);
 
-setTimeout(() => {
-  store.dispatch({
-    type: 'SET_BOOKS',
-    payload: {
-      books: [
-        {
-          id: 0,
-          title: 'Hello world'
-        }
-      ]
-    }
-  })
-}, 2000);
+// setTimeout(() => {
+//   store.dispatch({
+//     type: 'SET_BOOKS',
+//     payload: {
+//       books: [
+//         {
+//           id: 0,
+//           title: 'Hello world1'
+//         }
+//       ]
+//     }
+//   })
+// }, 2000);
 
 ReactDOM.render(  
   <React.StrictMode>

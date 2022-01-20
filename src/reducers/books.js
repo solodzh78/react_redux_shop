@@ -1,5 +1,10 @@
 const initialState = {
-  books: []
+  books: [
+    {
+      id: 0,
+      title: 'Hello book1'
+    }
+  ]
 };
 
 export default function booksReducer(state = initialState, action) {
@@ -13,7 +18,7 @@ export default function booksReducer(state = initialState, action) {
     case 'ADD_BOOKS':
       return {
         ...state,
-        books: [...state.books, action.payload]
+        books: [...state.books, action.payload.books]
       };
     default:
       return state;
