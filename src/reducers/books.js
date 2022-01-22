@@ -1,10 +1,7 @@
 const initialState = {
-  books: [
-    {
-      id: 0,
-      title: 'Hello book1'
-    }
-  ]
+  isReady: false,
+  items: null,
+  filterBy: 'all'
 };
 
 export default function booksReducer(state = initialState, action) {
@@ -13,12 +10,18 @@ export default function booksReducer(state = initialState, action) {
     case 'SET_BOOKS':
       return {
         ...state,
-        books: action.payload.books
+        items: action.payload,
+        isReady: true
       };
-    case 'ADD_BOOKS':
+      case 'SET_FILTER':
+        return {
+          ...state,
+          filterBy: action.payload
+        };
+      case 'SET_IS_READY':
       return {
         ...state,
-        books: [...state.books, action.payload.books]
+        isReady: action.payload
       };
     default:
       return state;

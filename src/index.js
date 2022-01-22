@@ -2,39 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import './index.css';
-import App from './App';
-
+import App from './containers/App';
 import newStore from './store';
+
+import './index.css';
+import './app.css';
+
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
+
 const store = newStore();
-
-// setTimeout(() => {
-//   store.dispatch({
-//     type: 'SET_BOOKS',
-//     payload: {
-//       books: [
-//         {
-//           id: 0,
-//           title: 'Hello world'
-//         }
-//       ]
-//     }
-//   })
-// }, 1000);
-
-// setTimeout(() => {
-//   store.dispatch({
-//     type: 'SET_BOOKS',
-//     payload: {
-//       books: [
-//         {
-//           id: 0,
-//           title: 'Hello world1'
-//         }
-//       ]
-//     }
-//   })
-// }, 2000);
 
 ReactDOM.render(  
   <React.StrictMode>
