@@ -10,7 +10,7 @@ function App({ setBooks, books, isReady }) {
   useEffect(() => {
     try {
       (async() => {
-        const { data } = await axios.get('/books.json');
+        const { data } = await axios.get('books.json');
         setBooks(data);
       })();
     } catch (error) {
