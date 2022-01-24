@@ -1,7 +1,6 @@
 const initialState = {
   isReady: false,
-  items: null,
-  filterBy: 'all'
+  items: null
 };
 
 export default function booksReducer(state = initialState, action) {
@@ -13,12 +12,7 @@ export default function booksReducer(state = initialState, action) {
         items: action.payload,
         isReady: true
       };
-      case 'SET_FILTER':
-        return {
-          ...state,
-          filterBy: action.payload
-        };
-      case 'SET_IS_READY':
+    case 'SET_IS_READY':
       return {
         ...state,
         isReady: action.payload

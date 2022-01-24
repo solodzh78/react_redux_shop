@@ -11,7 +11,12 @@ import * as filterActions from "../actions/filter";
 
 import App from '../components/App';
 
-const sortBy = ({ items, filterBy }) => {
+const sortBy = ( { items }, { filterBy, searchQuery} ) => {
+  const searchFunction = item => 
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    item.author.toLowerCase().includes(searchQuery.toLowerCase());
+    
+  items = items && items.filter(searchFunction);
   switch (filterBy) {
     case 'all':
       return items;
@@ -28,8 +33,8 @@ const sortBy = ({ items, filterBy }) => {
   }
 }
 
-const mapStateToProps = ({ books }) => ({
-  books: sortBy(books),
+const mapStateToProps = ({ books, filter }) => ({
+  books: sortBy(books, filter),
   isReady: books.isReady,
 });
 

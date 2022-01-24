@@ -35,8 +35,8 @@ const Filter = ({ setFilter, filterBy, setQuery, searchQuery }) => (
         >
           Автор
         </Menu.Item>
-        <Menu.Item >
-          <Input placeholder='Введите запрос...' icon='search' value={searchQuery} onChange={e => setQuery}/>
+        <Menu.Item position='right'>
+          <Input placeholder='Введите запрос...' icon='search' value={searchQuery} onChange={e => setQuery(e.target.value)}/>
         </Menu.Item>
       </Menu>
     </div>

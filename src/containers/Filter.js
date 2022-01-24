@@ -5,8 +5,9 @@ import * as filterActions from "../actions/filter";
 
 import Filter from "../components/Filter";
 
-const mapStateToProps = ({ books }) => ({
-  filterBy: books.filterBy,
+const mapStateToProps = ({ filter }) => ({
+  filterBy: filter.filterBy,
+  searchQuery: filter.searchQuery
 });
 
 const mapDispatchToProps = dispatch => ({

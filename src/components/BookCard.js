@@ -1,7 +1,9 @@
 import React from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Button, Card, Icon, Image } from "semantic-ui-react";
 
-const BookCard = ({ title, author, image, price }) => (
+const BookCard = ({ id, title, author, image, price, addToCart, addedCount }) => {
+  const book ={ id, title, author, image, price, addedCount };
+  return(
   <Card>
     <Image src={ image } wrapped ui={false} />
     <Card.Content>
@@ -11,12 +13,13 @@ const BookCard = ({ title, author, image, price }) => (
       </Card.Meta>
     </Card.Content>
     <Card.Content extra>
-      <a>
+      <div>
 				{ price }
         <Icon name="rub" />
-      </a>
+      </div>
     </Card.Content>
+    <Button color={'blue'} onClick={addToCart.bind(this, book)}>Добавить в корзину {addedCount > 0 && `(${addedCount})`}</Button>
   </Card>
-);
+)};
 
 export default BookCard;
